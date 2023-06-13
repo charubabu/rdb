@@ -1,0 +1,51 @@
+{
+    "employee": [
+        {
+          "Dedalus ID": "WRK-013180",
+          "Employee ID": "19000001",
+          "Employee Name": "Selva",
+          "Mail Id": "Selva@dedalus.com",
+          "Gender": "Male",
+          "Location": "Chennai",
+          "Product Group": "Aide Apps",
+          "Product": "ClinicalAide",
+          "Unified Roles": "Engineering",
+          "Product Work Area": "Lorenzo Browser Modernisation",
+          "Work Group": "Development",
+          "HL Role": "Developer",
+          "HL Designation": "Associate Professional Product Developer",
+          "HL Title": "Assoc. Prof",
+          "Reporting Manager": "Karthikeyan",
+          "Manager Email": "karthik@dedalus.com",
+          "GET": "",
+          "CSC_DoJ": "06-Mar-23",
+          "Date of Leaving": "",
+          "Unit": "PBU",
+          "Owning": "HCIS"
+        },
+     
+        {
+          "Dedalus ID": "WRK-013180",
+          "Employee ID": "19000002",
+          "Employee Name": "Lakshmi Narayann",
+          "Mail Id": "yasik.pugazhenthi@dedalus.com",
+          "Gender": "Male",
+          "Location": "Chennai",
+          "Product Group": "Aide Apps",
+          "Product": "ClinicalAide",
+          "Unified Roles": "Engineering",
+          "Product Work Area": "Lorenzo Browser Modernisation",
+          "Work Group": "Development",
+          "HL Role": "Developer",
+          "HL Designation": "Associate Professional Product Developer",
+          "HL Title": "Assoc. Prof",
+          "Reporting Manager": "Selvakumar Rajaguru",
+          "Manager Email": "srajaguru3@dedalus.com",
+          "GET": "",
+          "CSC_DoJ": "06-Mar-23",
+          "Date of Leaving": "",
+          "Unit": "PBU",
+          "Owning": "HCIS"
+        }
+    ]
+}

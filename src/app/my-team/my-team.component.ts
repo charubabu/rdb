@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../services/employee.service';
 import { EmployeeDetailsComponent } from '../employee-details/employee-details.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 
 
@@ -17,26 +18,37 @@ export class MyTeamComponent implements OnInit {
   Employees1:any;
   Employeesby:any;
   Employees2:any;
+  logged:any;
+  isReportees=true;
 
-constructor(private employeeService: EmployeeService ,private dialog: MatDialog) { 
+
+  employeeId = 19000005;
+  employee3: any;
+constructor(private employeeService: EmployeeService ,private router: Router) { 
    
 }
 
 ngOnInit(): void {
+  this.logged = 3;
+
+  
+
   this.employeeService.getEmployees().subscribe(response => {
-    this.Employees = response[3];});
+    this.Employees = response[this.logged];});
+  
+    //for test 
     
 
- 
-    
+    this.getEmployeeData();
+
 
     //for peers
     this.employeeService.getEmployeesdetails().subscribe(response => {
-      const desiredIndex = 3; 
+      const desiredIndex = this.logged; 
       if (response && response.length > desiredIndex) {
         const selectedEmployee = response[desiredIndex];
-        const peer = selectedEmployee['Reporting Manager'];
-        this.currentUser = selectedEmployee['Employee Name']
+        const peer = this.employee3['Reporting Manager'];
+        this.currentUser = this.employee3['Employee Name']
         this.Employees2 = response.filter(employee => ( employee?.['Reporting Manager'] === peer ));
       } else {
         // this.Employees = [];
@@ -47,24 +59,43 @@ ngOnInit(): void {
 
     //for reportees
     this.employeeService.getEmployeesdetails().subscribe(response => {
-      const desiredIndex = 3; 
+      const desiredIndex = this.logged; 
       if (response && response.length > desiredIndex) {
         const selectedEmployee = response[desiredIndex];
-        const report = selectedEmployee['Employee Name'];
-        this.currentUser = selectedEmployee['Employee Name']
+        const report = this.employee3['Employee Name'];
+        this.currentUser = this.employee3['Employee Name']
 
         this.Employees1 = response.filter(employee => ( employee?.['Reporting Manager'] === report ));
 
+        if(this.Employees1.length == 0){
+          this.isReportees = false;
+        }
       } else {
         // this.Employees = [];
         this.selectedEmployee = null;
       }
     });
+
+    
+  
 } 
 
 openpop(empId:any) {   
   sessionStorage.setItem("empId",empId);
-  this.dialog.open(EmployeeDetailsComponent,{width:'30%',height:'80%'});
+  this.router.navigateByUrl('/details');
+}
+
+getEmployeeData(): void {
+  this.employeeService.getEmployeeById(this.employeeId).subscribe(
+    (response: any[]) => {
+      this.employee3 = response.find(emp => emp['Employee ID'] == this.employeeId);
+    },
+    (error: any) => {
+      console.error('Error fetching employee data:', error);
+    }
+
+  );
+
 }
 
 }

@@ -20,7 +20,7 @@ export class EmployeeService {
     return this.http.get<any[]>(this.employeesUrl);
   }
 
-  getEmployeeById(empid: any) : Observable<any[]> {
-    return this.http.get<any[]> ('http://localhost:4500/employee?Employee ID='+empid);
+  getEmployeeById(employeeid: number) : Observable<any[]> {
+    return this.http.get<any[]> (this.employeesUrl);
   }
 }

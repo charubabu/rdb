@@ -1,35 +1,190 @@
-.inf-content{
-    border:1px solid #f5f5f5;
-    -webkit-border-radius:10px;
-    -moz-border-radius:10px;
-    border-radius:10px;  
-    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
 
 
-    /* position: absolute; */
-}
+   /* .employee-details-row p {
+
+    margin-left: 5px;
+
+  }
+
+ 
 
 
-    .inf-content {
-        padding: 20px;
-    }
 
-    .ratings li {
-        display: inline-block;
-        font-size: 18px;
-        color: #ffd700;
-    }
 
-    .row {
-        margin-bottom: 10px;
-    }
+.employee-details-column {
 
-    .col-label {
-        font-weight: bold;
-    }
+    display: grid;
 
-    .col-value {
-        color: #337ab7;
-    }
+    grid-template-columns: 1fr;
+
+    grid-row-gap: 10px;
+
+  }
+
+ 
+
+  .employee-details-column .form-group {
+
+    margin-bottom: 0;
+
+  }
+
+ 
+
+  .employee-details-column label {
+
+    font-weight: bold;
+
+  }
+
+ 
+
+  .employee-details-column p {
+
+    margin-bottom: 5px;
+
+  }
+
+  .card-header{
+
+    background-color: rgb(50, 122, 169) ;
+
+
+
+
+  }
+
+  .container{
+
+    margin-top:30px;
+
+
+
+
+  }
 
   
+
+  ul{
+    list-style-type: none;
+  }
+ */
+
+
+
+ .inf-content{
+
+    border:1px solid #f5f5f5;
+  
+    -webkit-border-radius:10px;
+  
+    -moz-border-radius:10px;
+  
+    border-radius:10px;  
+  
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+  
+  
+  
+  
+  
+   
+  
+  }
+  
+  
+  
+  
+  
+    .inf-content {
+  
+        padding: 20px;
+  
+    }
+  
+  
+  
+  
+    .ratings li {
+  
+        display: inline-block;
+  
+        font-size: 18px;
+  
+        color: #ffd700;
+  
+    }
+  
+  
+  
+  
+    .row {
+  
+        margin-bottom: 10px;
+  
+    }
+  
+  
+  
+  
+    .col-label {
+  
+        font-weight: bold;
+  
+    }
+  
+  
+  
+  
+    .col-value {
+  
+        color: #337ab7;
+  
+    }
+  
+    .ram{
+  
+      overflow-y: scroll;
+  
+      max-height: 576px;
+  
+      margin-left: 300px;  
+  
+    }
+
+
+    .inf-content{
+        border:1px solid #f5f5f5;
+        -webkit-border-radius:10px;
+        -moz-border-radius:10px;
+        border-radius:10px;  
+        box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+    
+    
+        /* position: absolute; */
+    }
+    
+    
+        .inf-content {
+            padding: 20px;
+        }
+    
+        .ratings li {
+            display: inline-block;
+            font-size: 18px;
+            color: #ffd700;
+        }
+    
+        .row {
+            margin-bottom: 10px;
+        }
+    
+        .col-label {
+            font-weight: bold;
+        }
+    
+        .col-value {
+            color: #337ab7;
+        }
+    
+      

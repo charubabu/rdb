@@ -20,25 +20,61 @@ export class MyTeamComponent implements OnInit {
   Employees2:any;
   logged:any;
   isReportees=true;
+ 
+  //for api
+  employeeData: any;
+  employeeData2:any;
+  employeeData3:any;
+  employeeId1 = 247;
 
 
   employeeId = 19000005;
   employee3: any;
-constructor(private employeeService: EmployeeService ,private router: Router) { 
-   
-}
+constructor(private employeeService: EmployeeService ,private router: Router) {  }
 
 ngOnInit(): void {
-  this.logged = 3;
+  
+  //for displaying card
+  this.employeeService.getData(this.employeeId1).subscribe(
+    (data) => {
+      console.log(data);
+      this.employeeData = data;
+    },
+    (error) => {
+      console.error(error);
+    }
+  );
+
+  //for displaying reportees
+  this.employeeService.getReportee(this.employeeId1,"reportee").subscribe(
+    (data) => {
+      console.log("reportee",data);
+      this.employeeData2 = data;
+    },
+    (error) => {
+      console.error(error);
+    }
+  );
+
+
+  //for displaying peer
+  this.employeeService.getPeer(this.employeeId1,"peer").subscribe(
+    (data) => {
+      console.log("peer",data);
+      this.employeeData3 = data;
+    },
+    (error) => {
+      console.error(error);
+    }
+  );
+
 
   
-
+  this.logged = 3;
   this.employeeService.getEmployees().subscribe(response => {
-    this.Employees = response[this.logged];});
+  this.Employees = response[this.logged];});
   
     //for test 
-    
-
     this.getEmployeeData();
 
 
@@ -76,6 +112,8 @@ ngOnInit(): void {
       }
     });
 
+
+
     
   
 } 
@@ -97,5 +135,8 @@ getEmployeeData(): void {
   );
 
 }
+
+
+
 
 }
